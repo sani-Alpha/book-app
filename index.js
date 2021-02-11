@@ -27,7 +27,7 @@ app.get('/books', function(req,res) {
     });
 });
 
-app.listen(process.env.NODE_ENV||3000, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
     mongoclient.connect(process.env.DB_URL||'mongodb://localhost/my_books', {useUnifiedTopology: true}, (error,client) => {
         if(error)
             throw error;
