@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoclient = require('mongodb').MongoClient; 
+const env = require('dotenv').config();
 // const objectid = require('mongodb').ObjectID;
 
 const app = express();
@@ -26,12 +27,11 @@ app.get('/books', function(req,res) {
 });
 
 app.listen(3000, ()=>{
-    mongoclient.connect('mongodb://localhost/my_books', {useUnifiedTopology: true}, (error,client) => {
+    mongoclient.connect(process.env.DB_URL||'mongodb://localhost/my_books', {useUnifiedTopology: true}, (error,client) => {
         if(error)
             throw error;
         database = client.db('my_books');
         collection = database.collection('library');
         console.log('connected to my_books');
     });    
-    console.log('Listening on http://localhost:3000/books');
 });
