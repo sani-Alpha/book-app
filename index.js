@@ -10,11 +10,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 let database,collection;
 
 app.post('/books',(req,res) => {
-    console.log(req.body);
-    collection.insert(req.body, (error,result) => {
+    collection.insertOne(req.query, (error,result) => {
         if(error)
             return res.status(500).send(error);
-        res.send(result.result);
+        res.status(200).send(result.result);
     });
 });
 
@@ -22,12 +21,12 @@ app.get('/books', function(req,res) {
     collection.find({}).toArray((error,result) =>{
         if(error)
             return res.status(500).send(error); 
-        res.send(result);
+        res.status(200).send(result);
     });
 });
 
 app.listen(3000, ()=>{
-    mongoclient.connect('mongodb://localhost/my_books', {useNewUrlParser: true}, (error,client) => {
+    mongoclient.connect('mongodb://localhost/my_books', {useUnifiedTopology: true}, (error,client) => {
         if(error)
             throw error;
         database = client.db('my_books');
