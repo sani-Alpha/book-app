@@ -5,6 +5,7 @@ const env = require('dotenv').config();
 const objectid = require('mongodb').ObjectID;
 
 const app = express();
+app.use(express.static('client'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -26,7 +27,7 @@ app.get('/books', function(req,res) {
     });
 });
 
-app.listen(3000, ()=>{
+app.listen(process.env.NODE_ENV||3000, ()=>{
     mongoclient.connect(process.env.DB_URL||'mongodb://localhost/my_books', {useUnifiedTopology: true}, (error,client) => {
         if(error)
             throw error;
