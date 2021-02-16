@@ -15,7 +15,7 @@ app.post('/books',(req,res) => {
     collection.insertOne(req.query, (error,result) => {
         if(error)
             return res.status(500).send(error);
-        res.status(200).send(result.result);
+        res.status(200).send('Your books has been listed! Thank you!');
     });
 });
 
