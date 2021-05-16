@@ -1,0 +1,391 @@
+15/5/2021, 11:00:27 pm | ERROR | Book-Worm.log | MongoParseError: Invalid connection string | 
+15/5/2021, 11:00:27 pm | ERROR | Book-Worm.log | TypeError: Cannot read property 'db' of undefined | 
+15/5/2021, 11:01:39 pm | INFO | Book-Worm.log | connected to [object Object] => [object Object] | 
+15/5/2021, 11:12:31 pm | INFO | Book-Worm.log | connected to [object Object] => [object Object] | 
+15/5/2021, 11:15:09 pm | INFO | Book-Worm.log | connected to [object Object] => [object Object] | 
+15/5/2021, 11:15:29 pm | ERROR | Book-Worm.log | uncaughtException: Cannot read property 'db' of undefined
+TypeError: Cannot read property 'db' of undefined
+    at /Users/sanidhya/Documents/book-app/server/Services/dbScript.js:11:23
+    at /Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/utils.js:684:9
+    at /Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/mongo_client.js:226:23
+    at /Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/operations/connect.js:286:21
+    at parseConnectionString (/Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/core/uri_parser.js:572:12)
+    at connect (/Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/operations/connect.js:284:3)
+    at /Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/mongo_client.js:225:5
+    at maybePromise (/Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/utils.js:681:3)
+    at MongoClient.connect (/Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/mongo_client.js:221:10)
+    at Function.MongoClient.connect (/Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/mongo_client.js:445:22) | 
+15/5/2021, 11:15:28 pm | ERROR | Book-Worm.log | MongoParseError: Invalid connection string | 
+15/5/2021, 11:15:34 pm | ERROR | Book-Worm.log | uncaughtException: Cannot read property 'db' of undefined
+TypeError: Cannot read property 'db' of undefined
+    at /Users/sanidhya/Documents/book-app/server/Services/dbScript.js:11:23
+    at /Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/utils.js:684:9
+    at /Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/mongo_client.js:226:23
+    at /Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/operations/connect.js:286:21
+    at parseConnectionString (/Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/core/uri_parser.js:572:12)
+    at connect (/Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/operations/connect.js:284:3)
+    at /Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/mongo_client.js:225:5
+    at maybePromise (/Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/utils.js:681:3)
+    at MongoClient.connect (/Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/mongo_client.js:221:10)
+    at Function.MongoClient.connect (/Users/sanidhya/Documents/book-app/node_modules/mongodb/lib/mongo_client.js:445:22) | 
+15/5/2021, 11:16:24 pm | INFO | Book-Worm.log | connected to [object Object] => [object Object] | 
+15/5/2021, 11:17:14 pm | INFO | Book-Worm.log | connected to [object Object] => [object Object] | 
+15/5/2021, 11:17:41 pm | INFO | Book-Worm.log | [object Object] | 
+15/5/2021, 11:17:41 pm | INFO | Book-Worm.log | [object Object] | 
+15/5/2021, 11:17:41 pm | INFO | Book-Worm.log | [object Object] | 
+15/5/2021, 11:18:48 pm | INFO | Book-Worm.log | connected to [object Object] => [object Object] | 
+15/5/2021, 11:18:58 pm | INFO | Book-Worm.log | [object Object] | 
+15/5/2021, 11:18:58 pm | INFO | Book-Worm.log | [object Object] | 
+15/5/2021, 11:18:58 pm | INFO | Book-Worm.log | [object Object] | 
+15/5/2021, 11:21:04 pm | INFO | Book-Worm.log | connected to [object Object] => [object Object] | 
+15/5/2021, 11:22:26 pm | INFO | Book-Worm.log | connected to:  | data:"[object Object]=>[object Object]" | 
+15/5/2021, 11:25:01 pm | ERROR | Book-Worm.log | uncaughtException: Cannot find module '../Services/logger'
+Require stack:
+- /Users/sanidhya/Documents/book-app/server/index.js
+Error: Cannot find module '../Services/logger'
+Require stack:
+- /Users/sanidhya/Documents/book-app/server/index.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:880:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:725:27)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:5:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12) | 
+15/5/2021, 11:25:01 pm | ERROR | Book-Worm.log | uncaughtException: Cannot find module '../Services/logger'
+Require stack:
+- /Users/sanidhya/Documents/book-app/server/index.js
+Error: Cannot find module '../Services/logger'
+Require stack:
+- /Users/sanidhya/Documents/book-app/server/index.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:880:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:725:27)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:5:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12) | 
+15/5/2021, 11:25:50 pm | INFO | Book-Worm.log | connected to:  | data:"[object Object]=>[object Object]" | 
+15/5/2021, 11:26:45 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:26:46 pm | INFO | Book-Worm.log | connected to:  | data:"[object Object]=>[object Object]" | 
+15/5/2021, 11:27:28 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:27:28 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:27:39 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:27:40 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:28:33 pm | INFO | Router.log | [object Object] | 
+15/5/2021, 11:29:46 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:29:47 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:29:54 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:29:54 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:29:54 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:30:21 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:30:22 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:30:25 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:30:25 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:30:25 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:30:48 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:30:49 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:31:09 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:31:10 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:31:13 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:31:13 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:31:13 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:31:25 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:31:25 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:31:27 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:31:27 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:31:27 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:31:44 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:31:45 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:31:46 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:31:46 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:31:46 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:34:10 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:34:11 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:34:48 pm | INFO | Router.log | undefined | 
+15/5/2021, 11:36:26 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:36:27 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:36:33 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:36:34 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:36:38 pm | INFO | Router.log | [object Object] | 
+15/5/2021, 11:37:33 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:37:34 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:38:03 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:38:04 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:38:49 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:38:49 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:41:13 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:41:14 pm | INFO | DB-Script.log | connected to: [object Object] => [object Object] | 
+15/5/2021, 11:42:19 pm | ERROR | Router.log | uncaughtException: Cannot read property 'collection' of undefined
+TypeError: Cannot read property 'collection' of undefined
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/Routes/router.js:12:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:4:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10) | 
+15/5/2021, 11:42:19 pm | ERROR | DB-Script.log | uncaughtException: Cannot read property 'collection' of undefined
+TypeError: Cannot read property 'collection' of undefined
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/Routes/router.js:12:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:4:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10) | 
+15/5/2021, 11:43:37 pm | ERROR | Router.log | uncaughtException: Cannot read property 'collection' of undefined
+TypeError: Cannot read property 'collection' of undefined
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/Routes/router.js:12:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:4:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10) | 
+15/5/2021, 11:43:37 pm | ERROR | DB-Script.log | uncaughtException: Cannot read property 'collection' of undefined
+TypeError: Cannot read property 'collection' of undefined
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/Routes/router.js:12:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:4:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10) | 
+15/5/2021, 11:45:08 pm | ERROR | Router.log | uncaughtException: Cannot read property 'collection' of undefined
+TypeError: Cannot read property 'collection' of undefined
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/Routes/router.js:12:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:4:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10) | 
+15/5/2021, 11:45:33 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:45:34 pm | INFO | DB-Script.log | connected to Books | 
+15/5/2021, 11:49:07 pm | ERROR | Router.log | uncaughtException: setDB is not defined
+ReferenceError: setDB is not defined
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/Routes/router.js:12:7)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:4:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10) | 
+15/5/2021, 11:49:39 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:50:23 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:53:26 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+15/5/2021, 11:53:49 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 10:59:41 am | ERROR | Router.log | uncaughtException: Unexpected token 'export'
+/Users/sanidhya/Documents/book-app/server/Services/dbScript.js:6
+export const getConnection = () => {
+^^^^^^
+
+SyntaxError: Unexpected token 'export'
+    at wrapSafe (internal/modules/cjs/loader.js:979:16)
+    at Module._compile (internal/modules/cjs/loader.js:1027:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/Routes/router.js:10:23)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10) | 
+16/5/2021, 11:01:00 am | ERROR | Router.log | uncaughtException: setDB is not defined
+ReferenceError: setDB is not defined
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/Routes/router.js:71:26)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:4:16)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10) | 
+16/5/2021, 11:01:59 am | ERROR | Router.log | Cannot read property 'db' of undefined | data:"TypeError: Cannot read property 'db' of undefined\n    at getDB (/Users/sanidhya/Documents/book-app/server/Routes/router.js:16:25)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)" | 
+16/5/2021, 11:01:59 am | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 11:02:00 am | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 11:02:33 am | INFO | Router.log | [object Object] | 
+16/5/2021, 11:04:43 am | ERROR | Router.log | Cannot read property 'db' of undefined | data:"TypeError: Cannot read property 'db' of undefined\n    at getDB (/Users/sanidhya/Documents/book-app/server/Routes/router.js:16:25)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)" | 
+16/5/2021, 11:04:43 am | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 11:04:44 am | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 11:04:48 am | INFO | Router.log | [object Object] | 
+16/5/2021, 11:24:12 am | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 11:24:12 am | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 11:24:12 am | ERROR | Router.log | Cannot read property 'db' of undefined | data:"TypeError: Cannot read property 'db' of undefined\n    at getDB (/Users/sanidhya/Documents/book-app/server/Routes/router.js:16:25)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)" | 
+16/5/2021, 11:26:16 am | ERROR | Router.log | Cannot read property 'db' of undefined | data:"TypeError: Cannot read property 'db' of undefined\n    at getDB (/Users/sanidhya/Documents/book-app/server/Routes/router.js:16:25)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)" | 
+16/5/2021, 11:26:16 am | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 11:26:16 am | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 11:38:34 am | ERROR | Router.log | Cannot read property 'db' of undefined | data:"TypeError: Cannot read property 'db' of undefined\n    at getDB (/Users/sanidhya/Documents/book-app/server/Routes/router.js:16:25)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)" | 
+16/5/2021, 11:38:34 am | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 11:38:34 am | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:41:31 pm | ERROR | Router.log | getConnection is not a function | data:"TypeError: getConnection is not a function\n    at getDB (/Users/sanidhya/Documents/book-app/server/Routes/router.js:15:34)\n    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/Routes/router.js:20:2)\n    at Module._compile (internal/modules/cjs/loader.js:1063:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)\n    at Module.load (internal/modules/cjs/loader.js:928:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:769:14)\n    at Module.require (internal/modules/cjs/loader.js:952:19)\n    at require (internal/modules/cjs/helpers.js:88:18)\n    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:4:16)\n    at Module._compile (internal/modules/cjs/loader.js:1063:30)" | 
+16/5/2021, 12:41:31 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:42:45 pm | ERROR | Router.log | getConnection is not a function | data:"TypeError: getConnection is not a function\n    at getDB (/Users/sanidhya/Documents/book-app/server/Routes/router.js:15:34)\n    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/Routes/router.js:20:2)\n    at Module._compile (internal/modules/cjs/loader.js:1063:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)\n    at Module.load (internal/modules/cjs/loader.js:928:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:769:14)\n    at Module.require (internal/modules/cjs/loader.js:952:19)\n    at require (internal/modules/cjs/helpers.js:88:18)\n    at Object.<anonymous> (/Users/sanidhya/Documents/book-app/server/index.js:4:16)\n    at Module._compile (internal/modules/cjs/loader.js:1063:30)" | 
+16/5/2021, 12:42:45 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:44:41 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 12:44:41 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:45:08 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 12:45:08 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:45:22 pm | INFO | Router.log | [object Object] | 
+16/5/2021, 12:45:22 pm | INFO | Router.log | New Book inserted | 
+16/5/2021, 12:46:46 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 12:46:46 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:47:59 pm | INFO | Router.log | [object Object] | 
+16/5/2021, 12:47:59 pm | INFO | Router.log | Displayed data from database | 
+16/5/2021, 12:54:06 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 12:54:06 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:54:23 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:54:23 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 12:55:06 pm | INFO | Router.log | [object Object] | 
+16/5/2021, 12:55:06 pm | INFO | Router.log | [object Object] | 
+16/5/2021, 12:55:06 pm | INFO | Router.log | [object Object] | 
+16/5/2021, 12:56:13 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 12:56:13 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:57:00 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 12:57:00 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:57:04 pm | INFO | Router.log | / | 
+16/5/2021, 12:57:04 pm | INFO | Router.log | /style.css | 
+16/5/2021, 12:57:04 pm | INFO | Router.log | /index.js | 
+16/5/2021, 12:59:35 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 12:59:35 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 12:59:36 pm | INFO | Router.log | / | 
+16/5/2021, 1:00:52 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:00:52 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:00:54 pm | INFO | Router.log | / | 
+16/5/2021, 1:01:18 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:01:18 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:02:14 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:02:14 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:02:16 pm | INFO | Router.log | / | 
+16/5/2021, 1:02:16 pm | ERROR | Router.log | uncaughtException: ENOENT: no such file or directory, stat '/Users/sanidhya/Documents/book-app/server/Client/index.html'
+Error: ENOENT: no such file or directory, stat '/Users/sanidhya/Documents/book-app/server/Client/index.html' | 
+16/5/2021, 1:02:16 pm | ERROR | DB-Script.log | uncaughtException: ENOENT: no such file or directory, stat '/Users/sanidhya/Documents/book-app/server/Client/index.html'
+Error: ENOENT: no such file or directory, stat '/Users/sanidhya/Documents/book-app/server/Client/index.html' | 
+16/5/2021, 1:02:16 pm | ERROR | Server.log | uncaughtException: ENOENT: no such file or directory, stat '/Users/sanidhya/Documents/book-app/server/Client/index.html'
+Error: ENOENT: no such file or directory, stat '/Users/sanidhya/Documents/book-app/server/Client/index.html' | 
+16/5/2021, 1:03:15 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:03:15 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:03:17 pm | INFO | Router.log | / | 
+16/5/2021, 1:03:17 pm | ERROR | Router.log | Error: ENOENT: no such file or directory, stat '/Users/sanidhya/Documents/book-app/server/Client/index.html' | 
+16/5/2021, 1:04:43 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:04:43 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:04:46 pm | INFO | Router.log | / | 
+16/5/2021, 1:04:46 pm | ERROR | Router.log | Error: ENOENT: no such file or directory, stat '/Users/sanidhya/Documents/book-app/server/Client/index.html' | 
+16/5/2021, 1:06:09 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:06:09 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:06:12 pm | INFO | Router.log | / | 
+16/5/2021, 1:06:12 pm | ERROR | Router.log | Error: ENOENT: no such file or directory, stat '/Users/sanidhya/Documents/book-app/server/Client/index.html' | 
+16/5/2021, 1:06:27 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:06:27 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:06:29 pm | INFO | Router.log | / | 
+16/5/2021, 1:06:29 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:06:29 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:07:10 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:07:10 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:12:13 pm | INFO | Router.log | / | 
+16/5/2021, 1:12:13 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:12:13 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:13:49 pm | INFO | Router.log | / | 
+16/5/2021, 1:13:49 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:13:49 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:14:47 pm | INFO | Router.log | / | 
+16/5/2021, 1:14:47 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:14:47 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:14:48 pm | INFO | Router.log | / | 
+16/5/2021, 1:14:48 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:14:48 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:15:14 pm | INFO | Router.log | / | 
+16/5/2021, 1:15:14 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:15:14 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:16:05 pm | INFO | Router.log | / | 
+16/5/2021, 1:16:05 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:16:05 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:16:24 pm | INFO | Router.log | / | 
+16/5/2021, 1:16:24 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:16:24 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:16:25 pm | INFO | Router.log | / | 
+16/5/2021, 1:16:25 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:16:25 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:16:25 pm | INFO | Router.log | / | 
+16/5/2021, 1:16:25 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:16:26 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:16:26 pm | INFO | Router.log | / | 
+16/5/2021, 1:16:26 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:16:26 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:16:26 pm | INFO | Router.log | / | 
+16/5/2021, 1:16:26 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:16:26 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:16:50 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:16:50 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:17:46 pm | INFO | Router.log | / | 
+16/5/2021, 1:17:46 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:17:46 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:18:59 pm | INFO | Router.log | / | 
+16/5/2021, 1:18:59 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:18:59 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:19:03 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:21:33 pm | INFO | Router.log | / | 
+16/5/2021, 1:21:33 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:21:33 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:26:40 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:26:40 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:29:36 pm | INFO | Router.log | / | 
+16/5/2021, 1:29:36 pm | ERROR | Router.log | Error: ENOENT: no such file or directory, stat '/Users/sanidhya/Documents/book-app/server/src/Client/index.html' | 
+16/5/2021, 1:30:02 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:30:02 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:30:05 pm | INFO | Router.log | / | 
+16/5/2021, 1:30:05 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:30:05 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:30:21 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:30:21 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:30:23 pm | INFO | Router.log | / | 
+16/5/2021, 1:30:23 pm | ERROR | Router.log | Error: EISDIR, read | 
+16/5/2021, 1:30:28 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:30:28 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:30:32 pm | INFO | Router.log | / | 
+16/5/2021, 1:30:32 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:30:32 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:32:09 pm | INFO | Router.log | / | 
+16/5/2021, 1:32:09 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:32:58 pm | INFO | Router.log | / | 
+16/5/2021, 1:32:58 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:32:58 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:46:09 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:46:09 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:47:39 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:47:39 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:48:17 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 1:48:17 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
+16/5/2021, 1:48:23 pm | INFO | Router.log | / | 
+16/5/2021, 1:48:23 pm | INFO | Router.log | /style.css | 
+16/5/2021, 1:48:23 pm | INFO | Router.log | /index.js | 
+16/5/2021, 1:48:23 pm | INFO | Router.log | /index.js | 
+16/5/2021, 2:51:54 pm | INFO | DB-Script.log | connected to Books | 
+16/5/2021, 2:51:54 pm | INFO | Server.log | server is runnning on "http://localhost:3000" | 
