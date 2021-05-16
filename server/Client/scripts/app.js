@@ -15,8 +15,10 @@ $(function(){
     });
 
     $('.navbar > .item').click(function(){
-        $('.item').removeClass('active');
-        $(this).addClass('active');
+        if(!$(this).hasClass('icon')) {
+            $('.item').removeClass('active');
+            $(this).addClass('active');
+        }
     });
 
     $('.icon').click(function (){
