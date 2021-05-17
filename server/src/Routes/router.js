@@ -5,7 +5,7 @@ const router = new express.Router();
 const logger = require('../Services/logger');
 const Logger = new logger('Router')
 const path = require('path')
-const publicRoot = path.join(__dirname, '../../');
+const publicRoot = path.join(__dirname, '../../public/');
 const getConnection = require('../Services/dbScript');
 
 let db;
@@ -21,7 +21,7 @@ router.use(function timeLog(req, res, next) {
 });
 
 router.get('/', (req, res) => {
-    res.status(200).sendFile('Client/index.html', {root: publicRoot}, (err) => {
+    res.status(200).sendFile('app.html', {root: publicRoot}, (err) => {
         if(err) {
             Logger.error(err);
             res.status(500).send('Could not find the page requested');
