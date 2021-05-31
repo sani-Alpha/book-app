@@ -37,6 +37,6 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint -c .eslintrc.json"
+    "*": "eslint -c .eslintrc.json"
   }
 }
