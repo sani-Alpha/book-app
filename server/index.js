@@ -4,7 +4,7 @@ const router = require('./src/Routes/router');
 const LoggerConstructor = require('./src/Services/logger');
 
 const logger = new LoggerConstructor('Server');
-const PORT = process.env.PORT || 3000;
+const {PORT} = process.env;
 
 const app = express();
 app.use('/', router);
