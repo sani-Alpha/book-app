@@ -1,5 +1,4 @@
-const mongoclient = require('mongodb').MongoClient;
-const LoggerConstructor = require('./logger');
+const {mongoclient, LoggerConstructor} = require('./imports');
 
 const logger = new LoggerConstructor('DB-Script');
 
