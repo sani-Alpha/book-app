@@ -1,13 +1,9 @@
-const express = require('express');
+const {express, path, LoggerConstructor} = require('../Utility/imports');
 
 const router = new express.Router();
-const path = require('path');
-const LoggerConstructor = require('../Services/logger');
-
 const logger = new LoggerConstructor('Router');
-
-const publicRoot = path.join(__dirname, '../../public/');
-const getConnection = require('../Services/dbScript');
+const client = path.join(__dirname, '../../client/');
+const getConnection = require('../Utility/dbScript');
 
 let db;
 getConnection.connectDB(async error => {
@@ -21,7 +17,7 @@ router.use((req, res, next) => {
 });
 
 router.get('/', (req, res) => {
-  res.status(200).sendFile('app.html', {root: publicRoot}, err => {
+  res.status(200).sendFile('app.html', {root: client}, err => {
     if (err) {
       logger.error(err);
       res.status(500).send('Could not find the page requested');

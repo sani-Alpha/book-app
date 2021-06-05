@@ -1,8 +1,8 @@
 /* eslint-disable no-dupe-class-members */
 const path = require('path');
+const winston = require('winston');
 
 const publicRoot = path.join(__dirname, '../../Logs/Serviceslogs.txt');
-const winston = require('winston');
 
 const dateFormat = () => {
   return new Date(Date.now()).toLocaleString('en-IN');
