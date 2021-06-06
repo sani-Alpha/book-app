@@ -1,6 +1,7 @@
-const {mongoclient, LoggerConstructor} = require('./imports');
+import {mongoclient, dotenv, LoggerConstructor} from './imports';
 
 const logger = new LoggerConstructor('DB-Script');
+dotenv.config();
 
 let db;
 const connectDB = async callback => {
@@ -14,11 +15,11 @@ const connectDB = async callback => {
       }
     );
   } catch (err) {
-    logger.error(err);
+    logger.error(err.message, err.stack);
   }
   logger.info(`connected to Books`);
 };
 
 const getDB = () => db;
 
-module.exports = {connectDB, getDB};
+export {connectDB, getDB};
