@@ -1,8 +1,8 @@
-const mongoclient = require('mongodb').MongoClient;
-const express = require('express');
-const env = require('dotenv').config();
-const path = require('path');
-const winston = require('winston');
-const LoggerConstructor = require('./logger');
+import mongodb from 'mongodb';
+import express from 'express';
+import dotenv from 'dotenv';
+import LoggerConstructor from './logger';
 
-module.exports = {mongoclient, express, env, path, winston, LoggerConstructor};
+const mongoclient = mongodb.MongoClient;
+
+export {mongoclient, express, dotenv, LoggerConstructor};

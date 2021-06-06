@@ -2,10 +2,11 @@
   "name": "book-app",
   "version": "1.0.0",
   "description": "",
-  "main": "./server/index.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "lint": "eslint -c .eslintrc.json server",
-    "start": "npx nodemon ./server/index.js"
+    "start": "npx nodemon --experimental-modules --es-module-specifier-resolution=node ./server/index.js"
   },
   "keywords": [],
   "author": "",

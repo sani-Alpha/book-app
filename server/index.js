@@ -1,10 +1,10 @@
-const {express, path, LoggerConstructor} = require('./src/Utility/imports');
+import {express, dotenv, LoggerConstructor} from './src/Utility/imports';
+import router from './src/Routes/router';
 
-const router = require('./src/Routes/router');
-
+dotenv.config();
 const logger = new LoggerConstructor('Server');
 const {PORT} = process.env;
-const publicDir = path.join(__dirname, '../../client/public');
+const publicDir = `${process.cwd()}/server/client/public`;
 
 const app = express();
 app.use('/', router);
