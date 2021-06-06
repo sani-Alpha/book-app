@@ -1,29 +1,26 @@
-const express = require('express');
+import {express, LoggerConstructor} from '../Utility/imports';
+import {createBook, getBooks, getAuthors} from '../Methods/library';
+import {connectDB, getDB} from '../Utility/dbScript';
 
 const router = new express.Router();
-const path = require('path');
-const LoggerConstructor = require('../Services/logger');
-
 const logger = new LoggerConstructor('Router');
-
-const publicRoot = path.join(__dirname, '../../public/');
-const getConnection = require('../Services/dbScript');
+const clientPath = `${process.cwd()}/server/client`;
 
 let db;
-getConnection.connectDB(async error => {
-  if (error) logger.error(error);
-  db = await getConnection.getDB();
+connectDB(async error => {
+  if (error) logger.error(error.message, error.stack);
+  db = await getDB();
 });
 
 router.use((req, res, next) => {
-  logger.info(`Request recieved at ${req.url}`, req.body);
+  logger.info(req.url, req.body);
   next();
 });
 
 router.get('/', (req, res) => {
-  res.status(200).sendFile('app.html', {root: publicRoot}, err => {
+  res.status(200).sendFile('app.html', {root: clientPath}, err => {
     if (err) {
-      logger.error(err);
+      logger.error(err.message, err.stack);
       res.status(500).send('Could not find the page requested');
     }
   });
@@ -38,39 +35,45 @@ router.post('/sendBook', async function (req, res) {
     genre: req.query.genre
   };
 
-  if (
-    bookData.name == null ||
-    bookData.author == null ||
-    bookData.pages == null ||
-    bookData.price == null ||
-    bookData.genre == null
-  ) {
+  if (bookData) {
+    try {
+      const newBook = await createBook(db, bookData);
+      if (newBook) {
+        logger.info('New Book inserted', newBook);
+        res.status(200).send('Your books has been listed! Thank you!');
+      }
+      res.status(200).send('Book already exists');
+    } catch (err) {
+      logger.error(err.message, err.stack);
+    }
+  } else {
     logger.warning('Data Missing');
     res.status(500).send('Data missing');
-  }
-
-  try {
-    await db.collection('books').insertOne(bookData, {upsert: true});
-  } catch (err) {
-    logger.error({message: err.message, stack: err.stack});
-  } finally {
-    logger.info('New Book inserted');
-    res.status(200).send('Your books has been listed! Thank you!');
   }
 });
 
 router.get('/books', async function (req, res) {
-  await db
-    .collection('books')
-    .find({})
-    .toArray((error, result) => {
-      if (error) {
-        logger.error(error);
-        res.status(500).send('Could not complete the request');
-      }
-      logger.info('Displayed data from database');
-      res.status(200).send(result);
-    });
+  try {
+    const books = await getBooks(db);
+    logger.info('Listing all the books from database');
+    res.status(200).send(books);
+  } catch (err) {
+    logger.error(err.message, err.stack);
+    logger.warning('Data Missing');
+    res.status(500).send('Data missing');
+  }
 });
 
-module.exports = router;
+router.get('/authors', async function (req, res) {
+  try {
+    const authors = await getAuthors(db);
+    logger.info('Listing all the authors from database');
+    res.status(200).send(authors);
+  } catch (err) {
+    logger.error(err.message, err.stack);
+    logger.warning('Data Missing');
+    res.status(500).send('Data missing');
+  }
+});
+
+export default router;

@@ -1,21 +1,20 @@
 /* eslint-disable no-dupe-class-members */
-const path = require('path');
+import winston from 'winston';
 
-const publicRoot = path.join(__dirname, '../../Logs/Serviceslogs.txt');
-const winston = require('winston');
+const logsPath = `${process.cwd()}/server/Logs/Serviceslogs.txt`;
 
 const dateFormat = () => {
   return new Date(Date.now()).toLocaleString('en-IN');
 };
 
-class Logger {
+class LoggerConstructor {
   constructor(route) {
     this.log_data = null;
     this.route = route;
     const logger = winston.createLogger({
       transports: [
         new winston.transports.File({
-          filename: publicRoot,
+          filename: logsPath,
           prettyPrint: true,
           handleExceptions: true,
           humanReadableUnhandledException: true
@@ -65,4 +64,4 @@ class Logger {
     });
   }
 }
-module.exports = Logger;
+export default LoggerConstructor;
