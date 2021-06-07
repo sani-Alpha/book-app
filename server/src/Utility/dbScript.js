@@ -1,4 +1,4 @@
-import {mongoclient, dotenv, LoggerConstructor} from './imports';
+import {mongoclient, dotenv, LoggerConstructor} from '../../config';
 
 const logger = new LoggerConstructor('DB-Script');
 dotenv.config();

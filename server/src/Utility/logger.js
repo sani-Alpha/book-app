@@ -1,8 +1,9 @@
 /* eslint-disable no-dupe-class-members */
 import winston from 'winston';
+import path from 'path';
 
-const logsPath = `${process.cwd()}/server/Logs/Serviceslogs.txt`;
-
+// const logsPath = `${process.cwd()}/server/Logs/Serviceslogs.txt`;
+const logsPath = path.join(__dirname, '../../Logs/Serviceslogs.txt');
 const dateFormat = () => {
   return new Date(Date.now()).toLocaleString('en-IN');
 };
@@ -64,4 +65,4 @@ class LoggerConstructor {
     });
   }
 }
-export default LoggerConstructor;
+export {path, LoggerConstructor};
