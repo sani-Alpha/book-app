@@ -1,10 +1,11 @@
-import {express, passport, passportLocal, bcrypt, LoggerConstructor} from '../../config';
+import {express, path, passport, passportLocal, bcrypt, LoggerConstructor} from '../../config';
 import {createBook, getBooks, getAuthors} from '../Methods/Library/library';
 import {connectDB, getDB} from '../Utility/dbScript';
 
 const router = new express.Router();
 const logger = new LoggerConstructor('Router');
-const clientPath = `${process.cwd()}/server/client`;
+const clientPath = path.join(__dirname, '../../client');
+const LocalStrategy = passportLocal.Strategy;
 
 let db;
 connectDB(async error => {
@@ -13,7 +14,7 @@ connectDB(async error => {
 });
 
 router.use((req, res, next) => {
-  logger.info(req.url, req.body);
+  logger.info(req.url, req.query);
   next();
 });
 
@@ -27,22 +28,25 @@ router.get('/', (req, res) => {
 });
 
 router.post('/api/sendBook', async function (req, res) {
-  const bookData = {
-    name: req.query.name,
-    author: req.query.author,
-    pages: req.query.pages,
-    price: req.query.price,
-    genre: req.query.genre
-  };
+  const bookData = req.query;
 
-  if (bookData) {
+  if (
+    bookData &&
+    bookData.name !== '' &&
+    bookData.author !== '' &&
+    bookData.pages !== '' &&
+    bookData.price !== '' &&
+    bookData.genre !== ''
+  ) {
     try {
       const newBook = await createBook(db, bookData);
-      if (newBook) {
+
+      if (!newBook) {
+        res.status(200).send('Book already exists');
+      } else {
         logger.info('New Book inserted', newBook);
         res.status(200).send('Your books has been listed! Thank you!');
       }
-      res.status(200).send('Book already exists');
     } catch (err) {
       logger.error(err.message, err.stack);
     }
@@ -76,30 +80,34 @@ router.get('/api/authors', async function (req, res) {
   }
 });
 
-//post request to register into db user details
-router.post('/api/register', (req, res) => {
-  let data = {
-    name: req.body.name,
-    username: req.body.username,
-    email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+// post request to register into db user details
+router.post('/api/register', async (req, res) => {
+  const data = {
+    name: req.query.name,
+    username: req.query.username,
+    email: req.query.email,
+    password: bcrypt.hashSync(req.query.password, bcrypt.genSaltSync(10))
   };
 
-  try {
-    db.collection('users').insert(data);
-  } catch (err) {
-    logger.error(err.message, err.stack);
-    res.status(500).send('Could not find the user requested');
-  }
+  if (data && data.name !== '' && data.username !== '' && data.email !== '' && data.password !== '') {
+    try {
+      await db.collection('users').insert(data);
+    } catch (err) {
+      logger.error(err.message, err.stack);
+      res.status(500).send('Could not fulfill request, try later!');
+    }
 
-  res.status(200).send('Signup Successful');
+    res.status(200).send('Signup Successful');
+  } else {
+    res.status(500).send('Missing Data Values');
+  }
 });
 
 // router.post('/api/changePassword', (req, res) => {
 //   let data = {
-//     oldPassword: req.body.name,
-//     username: req.body.username,
-//     password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+//     oldPassword: req.query.name,
+//     username: req.query.username,
+//     password: bcrypt.hashSync(req.query.password, bcrypt.genSaltSync(10))
 //   };
 
 //   try {
@@ -112,7 +120,7 @@ router.post('/api/register', (req, res) => {
 //   res.status(200).send('Signup Successful');
 // });
 
-//post request from client to login page
+// post request from client to login page
 router.post('/api/login', (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) {
@@ -123,36 +131,36 @@ router.post('/api/login', (req, res, next) => {
       res.status(400).send([user, 'Cannot Log In!', info]);
     }
 
-    req.login(user, err => {
-      if (err) {
-        logger.error(err.message, err.stack);
+    req.login(user, () => {
+      if (!err) {
+        res.send('Logged In!');
       }
-      res.send('Logged In!');
     });
+    return 0;
   })(req, res, next);
 });
 
-//get request from client to logout
+// get request from client to logout
 router.get('/api/logout', (req, res) => {
   req.logout();
   res.send('Logged Out!');
 });
 
-//defining middleware filter
+// defining middleware filter
 const authMiddleware = (req, res, next) => {
   if (!req.isAuthenticated()) {
     res.status(401).send('You are not Authenticated!');
   } else {
     return next();
   }
+  return 0;
 };
 
-//get request from client to fetch authenticated users
+// get request from client to fetch authenticated users
 router.get('/api/user', authMiddleware, async (req, res) => {
   try {
-    let user = await db.collection('users').findOne({_id: req.user._id});
-    if (user._id == req.session.passport.user) {
-      // console.log([user, req.session]);
+    const user = await db.collection('users').findOne({_id: req.user._id});
+    if (user._id === req.session.passport.user) {
       res.send({
         user: {
           name: user.name,
@@ -165,21 +173,24 @@ router.get('/api/user', authMiddleware, async (req, res) => {
   }
 });
 
-//using local auth strategy
+// using local auth strategy
 passport.use(
-  new localStrat(
+  new LocalStrategy(
     {
       usernameField: 'email',
       passwordField: 'password'
     },
     async (username, password, done) => {
       try {
-        let user = await db.collection('users').findOne({email: username});
+        const user = await db.collection('users').findOne({email: username});
         bcrypt.compare(password, user.password, (err, result) => {
-          if (err) console.log(err);
+          if (err) {
+            logger.error(err.message, err.stack);
+          }
           if (user.email === username && result) {
             return done(null, user);
-          } else return done(null, false, {message: 'Incorrect username or password'});
+          }
+          return done(null, false, {message: 'Incorrect username or password'});
         });
       } catch (err) {
         logger.error(err.message, err.stack);
@@ -189,15 +200,15 @@ passport.use(
   )
 );
 
-//user identification from cookie using id
+// user identification from cookie using id
 passport.serializeUser((user, done) => {
   done(null, user._id);
 });
 
-//fulffiling request to access secured URL
+// fulffiling request to access secured URL
 passport.deserializeUser(async (userId, done) => {
   try {
-    let user = await db.collection('users').findOne({_id: userId});
+    const user = await db.collection('users').findOne({_id: userId});
     done(null, user);
   } catch (err) {
     logger.error(err.message, err.stack);

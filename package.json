@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "lint": "eslint -c .eslintrc.json server",
-    "start": "npx nodemon --experimental-modules --es-module-specifier-resolution=node ./server/index.js"
+    "start": "npx nodemon --exec babel-node ./server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +24,10 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.4",
+    "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.13.0",
     "eslint-plugin-import": "^2.22.1",

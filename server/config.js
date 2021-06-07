@@ -5,8 +5,8 @@ import bcrypt from 'bcrypt';
 import passport from 'passport';
 import passportLocal from 'passport-local';
 import cookieSession from 'cookie-session';
-import LoggerConstructor from './src/Utility/logger';
+import {path, LoggerConstructor} from './src/Utility/logger';
 
 const mongoclient = mongodb.MongoClient;
 
-export {mongoclient, express, dotenv, bcrypt, passport, passportLocal, cookieSession, LoggerConstructor};
+export {mongoclient, express, dotenv, bcrypt, path, passport, passportLocal, cookieSession, LoggerConstructor};
