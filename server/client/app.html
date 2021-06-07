@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/app.css">
     <script src="./scripts/app.js"></script>
     <title>Book Worm</title>
@@ -16,17 +22,39 @@
 
 <body>
     <div class="main">
-        <div class="navbar">
-            <a class="home"><strong>BookWorm</strong></a>
-            <a class="item library active" href="#home">Library</a>
-            <a class="item addbook" href="#addBook">Add Book</a>
-            <a class="item about" href="#about">About</a>
-            <a class="item icon" href="javascript:void(0);">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand home" href="#">BookWorm</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link library item" href="#">Library <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link authors item" href="#authors">Authors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link addbook item" href="#addbook">Add Book</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link about item" href="#about">About</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="btn-nav">
+                        <a class="login-register btn navbar-btn btn-primary btn-rounded my-3" type="button"
+                            data-toggle="modal" data-target="modalLRForm">Login /
+                            Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
         <div class="body"></div>
+        <div class="forModal"></div>
     </div>
 </body>
 
