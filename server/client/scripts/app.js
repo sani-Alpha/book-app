@@ -1,33 +1,37 @@
 $(function () {
   $('.body').load('./pages/library.html');
 
-  $('.navbar > .library').click(function () {
+  $('.nav-item > .library').click(function () {
     $('.body').load('./pages/library.html');
   });
 
-  $('.navbar > .about').click(function () {
+  $('.nav-item > .about').click(function () {
     $('.body').load('./pages/about.html');
   });
 
-  $('.navbar > .addbook').click(function () {
+  $('.nav-item > .addbook').click(function () {
     $('.body').load('./pages/addBook.html');
   });
 
-  $('.navbar > .item').click(function () {
-    if (!$(this).hasClass('icon')) {
-      $('.item').removeClass('active');
-      $(this).addClass('active');
-    }
+  $('.nav-item > .authors').click(function () {
+    $('.body').load('./pages/authors.html');
   });
 
-  $('.icon').click(function () {
-    const x = $('.navbar');
-    if (x.hasClass('navbar')) {
-      x.toggleClass('responsive');
-    }
+  $('.nav-item').click(function () {
+    $('.nav-item').removeClass('active');
+    $(this).addClass('active');
   });
 
   $('.home').click(function () {
     window.location.reload();
+  });
+
+  $('.login-register').click(function () {
+    $('.forModal').load('./pages/auth.html #modalLRForm', function () {
+      $('#modalLRForm').modal({
+        keyboard: true,
+        focus: true
+      });
+    });
   });
 });
