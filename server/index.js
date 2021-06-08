@@ -4,7 +4,7 @@ import router from './src/Routes/router';
 dotenv.config();
 const logger = new LoggerConstructor('Server');
 const {PORT} = process.env;
-const publicDir = path.join(__dirname, '/server/client/');
+const publicDir = path.join(__dirname, '/client/');
 
 const app = express();
 app.use(express.json());
