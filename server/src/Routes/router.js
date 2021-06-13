@@ -84,8 +84,8 @@ router.get('/api/authors', async function (req, res) {
 router.post('/api/register', async (req, res) => {
   const data = {
     name: req.query.name,
-    username: req.query.username,
     email: req.query.email,
+    username: req.query.username,
     password: bcrypt.hashSync(req.query.password, bcrypt.genSaltSync(10))
   };
 
@@ -177,17 +177,17 @@ router.get('/api/user', authMiddleware, async (req, res) => {
 passport.use(
   new LocalStrategy(
     {
-      usernameField: 'email',
+      usernameField: 'username',
       passwordField: 'password'
     },
-    async (username, password, done) => {
+    async (userName, password, done) => {
       try {
-        const user = await db.collection('users').findOne({email: username});
+        const user = await db.collection('users').findOne({username: userName});
         bcrypt.compare(password, user.password, (err, result) => {
           if (err) {
             logger.error(err.message, err.stack);
           }
-          if (user.email === username && result) {
+          if (user.password === userName && result) {
             return done(null, user);
           }
           return done(null, false, {message: 'Incorrect username or password'});
