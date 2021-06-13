@@ -7,7 +7,6 @@ const {PORT} = process.env;
 const publicDir = path.join(__dirname, '/client/');
 
 const app = express();
-
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(publicDir));
